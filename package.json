@@ -1,0 +1,27 @@
+{
+    "name": "common-testtools",
+    "version": "0.1.0",
+    "description": "Node-paket med gemensamma testfunktioner för projekt under SKL Intyg",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sklintyg/node-common-testtools.git"
+    },
+    "keywords": [
+        "testtools",
+        "healthcare"
+    ],
+
+    "author": "SKL Intyg",
+    "license": "LGPL-3.0",
+    "bugs": {
+        "url": "https://inera-certificate.atlassian.net/projects/TI/issues"
+    },
+    "homepage": "https://github.com/sklintyg/node-common-testtools#readme",
+    "publishConfig": {
+        "registry": "https://build-inera.nordicmedtest.se/nexus/content/repositories/npm-internal/"
+    }
+}
