@@ -71,6 +71,7 @@ img{
   border-right:1px solid #C8C8C8 ;
   margin-right:0px;
   height:100%;
+  overflow: scroll;
 
 }
 
@@ -80,7 +81,7 @@ img{
     top: 0px;
     bottom: 0;
     left: 0;
-    overflow-y: hidden;
+    overflow-y: scroll;
   }
   
   #right {
