@@ -38,3 +38,6 @@ jspm_packages
 
 # Cucumber report result
 cucumber-html-report/*.json
+
+# OSX-generated-files
+.DS_Store
