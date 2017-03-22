@@ -67,7 +67,7 @@
           {{/if}}
           {{#each embeddings}}
           {{#if_eq this.mime_type "image/png"}}
-          <img src="data:image/png;base64,{{data}}" />
+          <img src="{{atobData}}" />
           {{/if_eq}}
           {{#if_eq this.mime_type "text/plain"}}
           <span class='text-attach'>{{atobData}}</span>
