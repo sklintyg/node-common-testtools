@@ -22,6 +22,6 @@
     },
     "homepage": "https://github.com/sklintyg/node-common-testtools#readme",
     "publishConfig": {
-        "registry": "https://build-inera.nordicmedtest.se/nexus/content/repositories/npm-internal/"
+        "registry": "https://build-inera.nordicmedtest.se/nexus/repository/npm-internal/"
     }
 }
