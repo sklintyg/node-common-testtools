@@ -30,6 +30,10 @@
          return 'success';
      } else if (status === 'failed') {
          return 'danger';
+     } else if (status === 'skipped') {
+         return 'primary';
+     } else if (status === 'undefined') {
+         return 'warning';
      } else {
          return 'default';
      }
