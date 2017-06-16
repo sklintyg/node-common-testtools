@@ -39,19 +39,31 @@
      }
  });
 
- function getScenarioResult(steps) {
+ Handlebars.registerHelper('durationFormat', function() {
+     var date = new Date(null);
+     date.setSeconds(this.duration / 1000000000); //nanoseconds to seconds
+     var result = date.toISOString().substr(11, 8);
+     return result;
+ });
+
+ function getScenarioInfo(steps) {
      if (!steps) {
          return 'pending';
      }
      var scenarioResult = 'passed';
+     var scenarioDuration = 0;
      console.log('steps:' + steps);
      $.each(steps, function(sIndex, step) {
          if (step.result && step.result.status !== 'passed') {
              scenarioResult = step.result.status;
              return false;
          }
+         scenarioDuration += step.result.duration;
      });
-     return scenarioResult;
+     return {
+         result: scenarioResult,
+         duration: scenarioDuration
+     };
  }
 
  function compare(a, b) {
@@ -69,8 +81,6 @@
 
 
      //Sortera features
-
-
      features.sort(compare);
 
      //Loop features
@@ -81,8 +91,11 @@
          // Loop scenarios
          console.log('elements:' + feature.elements);
          $.each(feature.elements, function(eIndex, scenario) {
-             var scenarioResult = getScenarioResult(scenario.steps);
+             var scenarioInfo = getScenarioInfo(scenario.steps);
+             var scenarioResult = scenarioInfo.result;
              features[fIndex].elements[eIndex].status = scenarioResult;
+             features[fIndex].elements[eIndex].duration = scenarioInfo.duration;
+
 
              if (scenarioResult !== 'passed') {
                  featureResult = scenarioResult;
