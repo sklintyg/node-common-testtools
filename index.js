@@ -1,5 +1,6 @@
 module.exports = {
     helpers: require('./lib/helpers.js'),
     HSAusers: require('./lib/hsa_users.js'),
-    testdataHelper: require('./lib/testdataHelper.js')
+    testdataHelper: require('./lib/testdataHelper.js'),
+	uiHelpers: require('./lib/uiHelpers.js')
 };
