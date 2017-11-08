@@ -1,6 +1,6 @@
 {
     "name": "common-testtools",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "description": "Node-paket med gemensamma testfunktioner för projekt under SKL Intyg",
     "main": "index.js",
     "scripts": {
