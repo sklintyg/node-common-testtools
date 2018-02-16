@@ -40,10 +40,15 @@
  });
 
  Handlebars.registerHelper('durationFormat', function() {
-     var date = new Date(null);
-     date.setSeconds(this.duration / 1000000000); //nanoseconds to seconds
-     var result = date.toISOString().substr(11, 8);
-     return result;
+     if (!this.duration) {
+		 return '0s';
+	 } else {
+		 var date = new Date(null);
+		 date.setSeconds(this.duration / 1000000000); //nanoseconds to seconds
+		 var result = date.toISOString().substr(11, 8);
+		 return result;
+	 }
+	 
  });
 
  function getScenarioInfo(steps) {
