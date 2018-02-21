@@ -67,7 +67,7 @@
           {{/if}}
           {{#each embeddings}}
           {{#if_eq this.mime_type "image/png"}}
-          <img src="{{atobData}}" />
+		  <img src="data:image/png;base64,{{data}}" alt="Printscreen could not be loaded"/>
           {{/if_eq}}
           {{#if_eq this.mime_type "text/plain"}}
           <span class='text-attach'>{{atobData}}</span>
